@@ -1,6 +1,15 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
+// Speed settings
+let speedSetting = localStorage.getItem("speed") || "medium";
+let foodSpeedMap = {
+  low: 1.5,
+  medium: 3,
+  high: 5
+};
+
+// Resize canvas based on screen
 function resizeCanvas() {
   const width = Math.min(window.innerWidth - 20, 400);
   canvas.width = width;
@@ -13,6 +22,7 @@ window.addEventListener("resize", () => {
   resetObjects();
 });
 
+// Cat image
 const catImg = new Image();
 catImg.src = localStorage.getItem("selectedCat") || "oreo.jpg";
 
@@ -38,12 +48,13 @@ function resetObjects() {
     x: Math.random() * (canvas.width - canvas.width * 0.1),
     y: 0,
     size: canvas.width * 0.08,
-    speed: canvas.height * 0.007
+    speed: foodSpeedMap[speedSetting]
   };
 }
 
 resetObjects();
 
+// Keyboard controls
 document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowLeft" && cat.x > 0) {
     cat.x -= cat.speed;
@@ -51,6 +62,26 @@ document.addEventListener("keydown", (e) => {
     cat.x += cat.speed;
   }
 });
+
+// Mobile buttons
+function moveLeft() {
+  if (cat.x > 0) {
+    cat.x -= cat.speed;
+  }
+}
+
+function moveRight() {
+  if (cat.x < canvas.width - cat.width) {
+    cat.x += cat.speed;
+  }
+}
+
+// Speed selection
+function setSpeed(level) {
+  speedSetting = level;
+  localStorage.setItem("speed", level);
+  resetObjects();
+}
 
 function drawCat() {
   ctx.drawImage(catImg, cat.x, cat.y, cat.width, cat.height);
@@ -93,20 +124,19 @@ function update() {
   if (food.y > canvas.height) {
     // Show BOOM ROASTED message
     document.getElementById("game-over-message").style.display = "block";
-  
+
     // Reset score
     score = 0;
-  
+
     // Reset food
     food.y = 0;
     food.x = Math.random() * (canvas.width - food.size);
-  
+
     // Hide message after 1.5 seconds
     setTimeout(() => {
       document.getElementById("game-over-message").style.display = "none";
     }, 1500);
   }
-  
 
   checkCollision();
   document.getElementById("score").textContent = `Score: ${score} | High Score: ${highScore}`;
@@ -116,16 +146,3 @@ function update() {
 catImg.onload = () => {
   update();
 };
-
-function moveLeft() {
-    if (cat.x > 0) {
-      cat.x -= cat.speed;
-    }
-  }
-  
-  function moveRight() {
-    if (cat.x < canvas.width - cat.width) {
-      cat.x += cat.speed;
-    }
-  }
-  

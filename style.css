@@ -102,4 +102,27 @@ body {
     50% { transform: scale(1.2); opacity: 1; }
     100% { transform: scale(1); }
   }
+
+  #speed-picker {
+    margin: 15px 0;
+  }
+  
+  #speed-picker button {
+    margin: 0 5px;
+    padding: 8px 16px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: none;
+    background-color: #ffddee;
+    cursor: pointer;
+    transition: transform 0.1s;
+  }
+  
+  #speed-picker button:hover {
+    background-color: #ffbbdd;
+  }
+  
+  #speed-picker button:active {
+    transform: scale(0.95);
+  }
   
