@@ -103,3 +103,16 @@ function update() {
 catImg.onload = () => {
   update();
 };
+
+function moveLeft() {
+    if (cat.x > 0) {
+      cat.x -= cat.speed;
+    }
+  }
+  
+  function moveRight() {
+    if (cat.x < canvas.width - cat.width) {
+      cat.x += cat.speed;
+    }
+  }
+  
