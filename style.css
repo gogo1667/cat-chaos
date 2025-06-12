@@ -1,5 +1,5 @@
 body {
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Arial Rounded MT Bold', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     text-align: center;
     background-color: #fff0f5;
     margin: 0;
@@ -73,8 +73,9 @@ body {
     margin-top: 10px;
   }
   
-  #mobile-controls button {
-    font-size: 2rem;
+  #mobile-controls button,
+  #speed-picker button {
+    font-size: 18px; /* 👈 At least 16px to prevent iOS zoom */
     padding: 10px 20px;
     margin: 0 10px;
     border-radius: 8px;
@@ -84,6 +85,7 @@ body {
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
     transition: transform 0.1s;
   }
+  
   
   #mobile-controls button:active {
     transform: scale(0.95);
@@ -105,17 +107,6 @@ body {
 
   #speed-picker {
     margin: 15px 0;
-  }
-  
-  #speed-picker button {
-    margin: 0 5px;
-    padding: 8px 16px;
-    font-size: 1rem;
-    border-radius: 6px;
-    border: none;
-    background-color: #ffddee;
-    cursor: pointer;
-    transition: transform 0.1s;
   }
   
   #speed-picker button:hover {
