@@ -1,0 +1,71 @@
+body {
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    background-color: #fff0f5;
+    margin: 0;
+    padding: 20px;
+    color: #444;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+    color: #ff66b2;
+    margin-bottom: 0.5rem;
+  }
+  
+  .instructions {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  
+  #cat-picker {
+    margin-bottom: 15px;
+  }
+  
+  #cat-picker p {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .cat-thumbnails {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .cat-option {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.2s ease-in-out;
+  }
+  
+  .cat-option:hover {
+    border-color: #ff66b2;
+  }
+  
+  canvas {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border: 3px solid #ff66b2;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: 0 auto;
+  }
+  
+  #score {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #555;
+  }
+  

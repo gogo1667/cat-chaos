@@ -1,1 +1,28 @@
-ertwtw
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cat Cafe Chaos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>🐾 Cat Cafe Chaos 🐾</h1>
+  <p class="instructions">Use arrow keys (or tilt!) to move the cat and catch falling food!</p>
+
+  <!-- Cat Selector -->
+  <div id="cat-picker">
+    <p>Choose Your Cat:</p>
+    <div class="cat-thumbnails">
+      <img src="oreo.jpg" class="cat-option" onclick="setCat('oreo.jpg')" />
+      <img src="melody.jpg" class="cat-option" onclick="setCat('melody.jpg')" />
+    </div>
+  </div>
+
+  <!-- Game Canvas -->
+  <canvas id="gameCanvas"></canvas>
+  <p id="score">Score: 0 | High Score: 0</p>
+
+  <script src="script.js"></script>
+</body>
+</html>
