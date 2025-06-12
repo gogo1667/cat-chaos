@@ -117,3 +117,8 @@ body {
     transform: scale(0.95);
   }
   
+  /* Prevent iOS double-tap zoom & remove tap highlight */
+button {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
