@@ -91,9 +91,22 @@ function update() {
 
   food.y += food.speed;
   if (food.y > canvas.height) {
+    // Show BOOM ROASTED message
+    document.getElementById("game-over-message").style.display = "block";
+  
+    // Reset score
+    score = 0;
+  
+    // Reset food
     food.y = 0;
     food.x = Math.random() * (canvas.width - food.size);
+  
+    // Hide message after 1.5 seconds
+    setTimeout(() => {
+      document.getElementById("game-over-message").style.display = "none";
+    }, 1500);
   }
+  
 
   checkCollision();
   document.getElementById("score").textContent = `Score: ${score} | High Score: ${highScore}`;

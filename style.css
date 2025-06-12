@@ -88,4 +88,18 @@ body {
   #mobile-controls button:active {
     transform: scale(0.95);
   }
+
+  #game-over-message {
+    font-size: 1.5rem;
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+    animation: pop 0.3s ease-in-out;
+  }
+  
+  @keyframes pop {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); }
+  }
   
